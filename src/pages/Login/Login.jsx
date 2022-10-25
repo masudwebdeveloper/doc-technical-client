@@ -31,7 +31,7 @@ const Login = () => {
          })
    }
    return (
-      <div className="max-w-md mx-auto mt-10 p-8 space-y-3 rounded-xl dark:bg-slate-900 dark:text-gray-100">
+      <div className="max-w-md mx-auto my-10 p-8 space-y-3 rounded-xl dark:bg-slate-900 dark:text-gray-100">
          <p className='text-red-700'>{ error}</p>
          <h1 className="text-2xl font-bold text-center">Please Login</h1>
          <form onSubmit={onSubmit} novalidate="" action="" className="space-y-6 ng-untouched ng-pristine ng-valid">

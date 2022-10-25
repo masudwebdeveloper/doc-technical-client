@@ -1,3 +1,4 @@
+import Blogs from "../../pages/Blogs/Blogs";
 import Category from "../../pages/Category/Category";
 import Courses from "../../pages/Courses/Courses";
 import ErrorPage from "../../pages/ErrorPage/ErrorPage";
@@ -28,6 +29,10 @@ export const router = createBrowserRouter([
             path: '/courses',
             element: <Courses></Courses>,
             loader: ()=> fetch('http://localhost:5000/courses')
+         },
+         {
+            path: '/blogs',
+            element: <Blogs></Blogs>
          },
          {
             path: '/courses/:id',
