@@ -1,18 +1,42 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+
 
 const Login = () => {
+   const { signIn, setUser } = useContext(AuthContext);
+   const [error, setError] = useState('');
+   const navigate = useNavigate();
+
+
+   const onSubmit = (event) => {
+      event.preventDefault();
+      const form = event.target;
+      const email = form.email.value;
+      const password = form.password.value;
+      signIn(email, password)
+         .then(result => {
+            const user = result.user;
+            form.reset();
+            setUser(user);
+            setError('')
+            navigate('/')
+            console.log(user);
+         })
+         .catch(error => error(error.message))
+   }
    return (
       <div className="max-w-md mx-auto mt-10 p-8 space-y-3 rounded-xl dark:bg-slate-900 dark:text-gray-100">
          <h1 className="text-2xl font-bold text-center">Please Login</h1>
-         <form novalidate="" action="" className="space-y-6 ng-untouched ng-pristine ng-valid">
+         <form onSubmit={onSubmit} novalidate="" action="" className="space-y-6 ng-untouched ng-pristine ng-valid">
             <div className="space-y-1 text-sm">
                <label for="username" className="block text-light-400 mb-3">Username</label>
-               <input type="email" name="email" id="username" placeholder="User email" className="w-full px-4 py-3 rounded-md border-light-700 bg-light-900 dark:text-gray-100 focus:border-violet-400" required/>
+               <input type="email" name="email" id="username" placeholder="User email" className="w-full px-4 py-3 rounded-md border-light-700 bg-light-900 dark:text-gray-900 focus:border-violet-400" required />
             </div>
             <div className="space-y-1 text-sm">
                <label for="password" className="block text-light-400 mb-3">Password</label>
-               <input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md border-light-700 bg-light-900 dark:text-gray-100 focus:border-violet-400" required/>
+               <input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md border-light-700 bg-light-900 dark:text-gray-900 focus:border-violet-400" required />
                <div className="flex justify-end text-xs text-light-400">
                   <Link className='mt-3' rel="noopener noreferrer" to="#">Forgot Password?</Link>
                </div>

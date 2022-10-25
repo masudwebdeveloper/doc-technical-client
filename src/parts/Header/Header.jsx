@@ -1,7 +1,18 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import { useContext } from 'react';
+import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import { useState } from 'react';
+
 
 const Header = () => {
+   const { user, logOut } = useContext(AuthContext)
+   const [error, setError] = useState('');
+   const handleSignOut = () => {
+      logOut()
+         .then(() => { })
+         .catch(error => setError(error.message))
+   }
    return (
       <div className="navbar bg-slate-100 lg:px-20">
          <div className="navbar-start">
@@ -15,30 +26,37 @@ const Header = () => {
                   <li><a>BLOGS</a></li>
                </ul>
             </div>
-            <a className="btn btn-ghost normal-case text-2xl font-bold">Doc Technical</a>
+            <Link to='/' className="btn btn-ghost normal-case text-2xl font-bold">Doc Technical</Link>
          </div>
          <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal p-0">
-               <li><NavLink to='/home' className={({ isActive }) => isActive ? "bg-red-500 mr-3" : "bg-blue-500 mr-3"}>HOME</NavLink></li>
-               <li><NavLink to='/courses' className={({ isActive }) => isActive ? "bg-red-500 mr-3" : "bg-blue-500 mr-3"}>COURSES</NavLink></li>
-               <li><NavLink to='/blogs' className={({ isActive }) => isActive ? "bg-red-500 mr-3" : "bg-blue-500 mr-3"}>BLOGS</NavLink></li>
-               <li><NavLink to="/login" className={({ isActive }) => isActive ? "bg-red-500 mr-3" : "bg-blue-500 mr-3"}>Log in</NavLink></li>
-               <li><NavLink to="/register" className={({ isActive }) => isActive ? "bg-red-500 mr-3" : "bg-blue-500 mr-3"}>Sign Up</NavLink></li>
+               <li><NavLink to='/home' className={({ isActive }) => isActive ? "text-gray-900 mr-3" : "text-blue-900 mr-3"}>HOME</NavLink></li>
+               <li><NavLink to='/courses' className={({ isActive }) => isActive ? "text-gray-900 mr-3" : "text-blue-900 mr-3"}>COURSES</NavLink></li>
+               <li><NavLink to='/blogs' className={({ isActive }) => isActive ? "text-gray-900 mr-3" : "text-blue-900 mr-3"}>BLOGS</NavLink></li>
+
+               {
+                  user ? <></> : <>
+                     <li><NavLink to="/login" className={({ isActive }) => isActive ? "text-gray-900 mr-3" : "text-blue-900 mr-3"}>Log in</NavLink></li>
+                     <li><NavLink to="/register" className={({ isActive }) => isActive ? "text-gray-900 mr-3" : "text-blue-900 mr-3"}>Sign Up</NavLink></li>
+                  </>
+               }
+
+
             </ul>
          </div>
          <div className="navbar-end">
-            <div className="dropdown dropdown-end items-center flex">
-               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                  <div className="w-10 rounded-full">
-                     <img src="https://placeimg.com/80/80/people" alt='' />
+            <ul className="menu menu-horizontal p-0">
+               <li tabIndex={0}>
+                  <div className='w-20'>
+                     <img className='w-full rounded-full' src={user?.photoURL ? user.photoURL : ''} alt='' />
                   </div>
-               </label>
-               <ul tabIndex={0} className="text-center menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-40">
-                  <li><a href='/' className="justify-between">Profile</a></li>
-                  <li><a>Settings</a></li>
-                  <li><a>Logout</a></li>
-               </ul>
-            </div>
+                  <ul className="p-2 bg-base-100">
+                     <li><a href='/'>Profile</a></li>
+                     <li><a href='/'>Setting</a></li>
+                     <li><buttton onClick={() => handleSignOut()} >Sign Out</buttton></li>
+                  </ul>
+               </li>
+            </ul>
          </div>
       </div>
    );
