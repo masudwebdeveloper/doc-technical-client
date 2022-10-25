@@ -50,7 +50,8 @@ const Header = () => {
                   <div className='w-20'>
                      <img className='w-full rounded-full' src={user?.photoURL ? user.photoURL : ''} alt='' />
                   </div>
-                  <ul className="p-2 bg-base-100">
+                  <ul className="p-2 bg-base-100 z-50">
+                     <li><Link to='/'>{ user?.displayName}</Link></li>
                      <li><a href='/'>Profile</a></li>
                      <li><a href='/'>Setting</a></li>
                      <li><buttton onClick={() => handleSignOut()} >Sign Out</buttton></li>
