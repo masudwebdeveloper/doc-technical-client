@@ -1,3 +1,5 @@
+import Category from "../../pages/Category/Category";
+import Courses from "../../pages/Courses/Courses";
 import ErrorPage from "../../pages/ErrorPage/ErrorPage";
 import Home from "../../pages/Home/Home";
 import Login from "../../pages/Login/Login";
@@ -15,6 +17,16 @@ export const router = createBrowserRouter([
          {
             path: '/',
             element: <Home></Home>
+         },
+         {
+            path: '/courses',
+            element: <Courses></Courses>,
+            loader: ()=> fetch('http://localhost:5000/courses')
+         },
+         {
+            path: '/course-category/:id',
+            element: <Category></Category>,
+            loader: ({params}) => fetch(`http://localhost:5000/course-category/${params.id}`)
          },
          {
             path: '/login',
