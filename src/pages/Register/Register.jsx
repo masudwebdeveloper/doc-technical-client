@@ -26,7 +26,7 @@ const Register = () => {
                   <label for="password" className="block font-bold text-md text-light-900 mb-3">Password</label>
                   <input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md border-light-700 bg-light-900 dark:text-gray-900 focus:border-violet-400" required />
                </div>
-               <button className="block w-full px-3 py-2 text-center rounded-sm text-light-900 font-bold text-2xl dark:bg-violet-400">Sign in</button>
+               <button className="block w-full px-3 py-2 text-center rounded-sm text-light-900 font-bold text-2xl dark:bg-violet-400">Sign Up</button>
             </form>
             <div className="flex items-center pt-4 space-x-1">
                <div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>

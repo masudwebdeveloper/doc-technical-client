@@ -19,7 +19,7 @@ const Header = () => {
          </div>
          <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal p-0">
-               <li><NavLink to='/' className={({ isActive }) => isActive ? "bg-red-500 mr-3" : "bg-blue-500 mr-3"}>HOME</NavLink></li>
+               <li><NavLink to='/home' className={({ isActive }) => isActive ? "bg-red-500 mr-3" : "bg-blue-500 mr-3"}>HOME</NavLink></li>
                <li><NavLink to='/courses' className={({ isActive }) => isActive ? "bg-red-500 mr-3" : "bg-blue-500 mr-3"}>COURSES</NavLink></li>
                <li><NavLink to='/blogs' className={({ isActive }) => isActive ? "bg-red-500 mr-3" : "bg-blue-500 mr-3"}>BLOGS</NavLink></li>
                <li><NavLink to="/login" className={({ isActive }) => isActive ? "bg-red-500 mr-3" : "bg-blue-500 mr-3"}>Log in</NavLink></li>

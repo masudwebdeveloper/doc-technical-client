@@ -17,16 +17,15 @@ const Courses = () => {
          <div className='grid grid-col-1 lg:grid-cols-3 container px-5 lg:px-20 '>
             <aside className='col-span-1'>
                <ul className="menu bg-base-100 w-56 rounded my-5">
-                  <h1>{categories.length}</h1>
                   {
                      categories.map((category, index) => <li key={index} className='hover-bordered mb-1'>
-                        <Link to={`/course-category/${category.id}`}>{ category.name}</Link>
+                        <Link to={`/course-category/${category.id}`}>{category.name}</Link>
                      </li>)
                   }
 
                </ul>
             </aside>
-            <aside className='col-span-2 grid grid-cols-1 lg:grid-cols-2 gap-5'>
+            <aside className='col-span-2 grid grid-cols-1 lg:grid-cols-2 gap-5 my-5'>
                {
                   courses.map(course => <Course key={course._id} course={course}></Course>)
                }
