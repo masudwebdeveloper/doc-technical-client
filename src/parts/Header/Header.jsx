@@ -40,8 +40,6 @@ const Header = () => {
                      <li><NavLink to="/register" className={({ isActive }) => isActive ? "text-gray-900 mr-3" : "text-blue-900 mr-3"}>Sign Up</NavLink></li>
                   </>
                }
-
-
             </ul>
          </div>
          <div className="navbar-end">

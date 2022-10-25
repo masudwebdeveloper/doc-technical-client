@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import { useContext } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 
 const Login = () => {
-   const { signIn, setUser } = useContext(AuthContext);
+   const { signIn, setUser, setLoading } = useContext(AuthContext);
    const [error, setError] = useState('');
    const navigate = useNavigate();
+   const location = useLocation()
 
-
+   const from = location.state?.from?.pathname || '/'; 
    const onSubmit = (event) => {
       event.preventDefault();
       const form = event.target;
@@ -21,10 +22,15 @@ const Login = () => {
             form.reset();
             setUser(user);
             setError('')
-            navigate('/')
+            if (user) {
+               navigate(from, {replace: true})
+            }
             console.log(user);
          })
          .catch(error => error(error.message))
+         .finally(() => {
+         setLoading(false)
+      })
    }
    return (
       <div className="max-w-md mx-auto mt-10 p-8 space-y-3 rounded-xl dark:bg-slate-900 dark:text-gray-100">
@@ -40,6 +46,7 @@ const Login = () => {
                <div className="flex justify-end text-xs text-light-400">
                   <Link className='mt-3' rel="noopener noreferrer" to="#">Forgot Password?</Link>
                </div>
+               <p className='text-red-700'>{ error}</p>
             </div>
             <button className="block w-full px-3 py-2 text-center rounded-sm text-light-900 font-bold text-2xl dark:bg-violet-400">Sign in</button>
          </form>
