@@ -5,7 +5,7 @@ const CoursesDetails = () => {
    const singleCourse = useLoaderData();
    const { title, image_url, details, duration, rating, total_price} = singleCourse;
    return (
-      <div className="flex flex-col w-full lg:flex-row">
+      <div className="flex flex-col w-full lg:flex-row my-5">
          <div className="p-5  lg:w-[50%] grid flex-grow card bg-base-300 rounded-box ">
             <img className='rounded-lg' src={image_url} alt="" /> 
             <Link to='/courses' className="link link-hover duration-700 hover:text-white hover:bg-sky-700 font-bold text-xl mx-auto bg-sky-400 w-44 py-3 px-3 rounded-lg my-5">Back to Courses</Link>

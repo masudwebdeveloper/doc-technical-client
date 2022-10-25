@@ -5,12 +5,12 @@ import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 
 const Login = () => {
-   const { signIn, setUser, setLoading } = useContext(AuthContext);
+   const { signIn, setLoading } = useContext(AuthContext);
    const [error, setError] = useState('');
    const navigate = useNavigate();
    const location = useLocation()
 
-   const from = location.state?.from?.pathname || '/'; 
+   const from = location.state?.from?.pathname || '/';
    const onSubmit = (event) => {
       event.preventDefault();
       const form = event.target;
@@ -20,33 +20,32 @@ const Login = () => {
          .then(result => {
             const user = result.user;
             form.reset();
-            setUser(user);
             setError('')
             if (user) {
-               navigate(from, {replace: true})
+               navigate(from, { replace: true })
             }
-            console.log(user);
          })
          .catch(error => error(error.message))
          .finally(() => {
-         setLoading(false)
-      })
+            setLoading(false)
+         })
    }
    return (
       <div className="max-w-md mx-auto mt-10 p-8 space-y-3 rounded-xl dark:bg-slate-900 dark:text-gray-100">
+         <p className='text-red-700'>{ error}</p>
          <h1 className="text-2xl font-bold text-center">Please Login</h1>
          <form onSubmit={onSubmit} novalidate="" action="" className="space-y-6 ng-untouched ng-pristine ng-valid">
             <div className="space-y-1 text-sm">
-               <label for="username" className="block text-light-400 mb-3">Username</label>
-               <input type="email" name="email" id="username" placeholder="User email" className="w-full px-4 py-3 rounded-md border-light-700 bg-light-900 dark:text-gray-900 focus:border-violet-400" required />
+               <label htmlFor="email" className="block text-light-400 mb-3">Useremail</label>
+               <input type="email" name="email" id='email' placeholder="User email" className="w-full px-4 py-3 rounded-md border-light-700 bg-light-900 dark:text-gray-900 focus:border-violet-400" required />
             </div>
             <div className="space-y-1 text-sm">
-               <label for="password" className="block text-light-400 mb-3">Password</label>
+               <label htmlFor="password" className="block text-light-400 mb-3">Password</label>
                <input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md border-light-700 bg-light-900 dark:text-gray-900 focus:border-violet-400" required />
                <div className="flex justify-end text-xs text-light-400">
                   <Link className='mt-3' rel="noopener noreferrer" to="#">Forgot Password?</Link>
                </div>
-               <p className='text-red-700'>{ error}</p>
+               <p className='text-red-700'>{error}</p>
             </div>
             <button className="block w-full px-3 py-2 text-center rounded-sm text-light-900 font-bold text-2xl dark:bg-violet-400">Sign in</button>
          </form>

@@ -18,7 +18,6 @@ const AuthProvider = ({ children }) => {
    }
 
    const userUpdateProfile = (profile) => {
-      setLoading(true)
       return updateProfile(auth.currentUser, profile);
    }
 
@@ -28,13 +27,15 @@ const AuthProvider = ({ children }) => {
    }
 
    useEffect(() => {
-      const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-         if (currentUser === null) {
+      const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
+         if (user === null) {
             setUser(currentUser)
          }
-         setLoading(false);
+         setLoading(false)
       })
-      return () => unsubscribe();
+      return () => {
+         unSubscribe();
+      }
    }, [])
    
    const logOut = () => {
@@ -46,6 +47,8 @@ const AuthProvider = ({ children }) => {
       signIn,
       logOut,
       setUser,
+      loading,
+      setLoading,
       createUser,
       userUpdateProfile
    }
