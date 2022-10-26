@@ -4,6 +4,7 @@ import Courses from "../../pages/Courses/Courses";
 import ErrorPage from "../../pages/ErrorPage/ErrorPage";
 import Home from "../../pages/Home/Home";
 import Login from "../../pages/Login/Login";
+import MyDocument from "../../pages/MyDocument/MyDocument";
 import Register from "../../pages/Register/Register";
 import CoursesDetails from "../../share/CoursesDetails/CoursesDetails";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
@@ -33,6 +34,10 @@ export const router = createBrowserRouter([
          {
             path: '/blogs',
             element: <Blogs></Blogs>
+         },
+         {
+            path: '/mydocument',
+            element: <MyDocument></MyDocument>
          },
          {
             path: '/courses/:id',

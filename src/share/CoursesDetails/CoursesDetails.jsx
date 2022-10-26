@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
+import MyDocument from '../../pages/MyDocument/MyDocument';
 
 const CoursesDetails = () => {
    const singleCourse = useLoaderData();
@@ -19,8 +20,10 @@ const CoursesDetails = () => {
                <h4>Rating: { rating.number } </h4>
                <h4>Total Price: { total_price} $</h4>
             </div>
-            <Link to='/enroll' className="link link-hover duration-700 hover:text-white hover:bg-sky-700 font-bold text-xl mx-auto bg-sky-400 w-44 px-3 rounded-lg h-12 pt-2 text-center">Enroll</Link>
+            <Link to='/mydocument' className="link link-hover duration-700 hover:text-white hover:bg-sky-700 font-bold text-xl mx-auto bg-sky-400 w-44 px-3 rounded-lg h-12 pt-2 text-center">Show Pdf file</Link>
+
          </div>
+         
       </div>
    );
 };
