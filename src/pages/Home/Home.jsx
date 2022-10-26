@@ -1,13 +1,14 @@
 import React from 'react';
 import { FaBootstrap, FaCss3, FaHtml5, FaNodeJs, FaPlay, FaReact } from 'react-icons/fa';
 import heroPhoto from '../../assets/brands/hero-photo.jpg'
-import photo1 from '../../assets/brands/masud-pic.jpg'
+import photo1 from '../../assets/brands/masud-pic.jpg';
+import photo2 from '../../assets/brands/guides.png';
 
 const Home = () => {
 
    return (
       <div>
-         <section className='dark:bg-gray-900 py-5 lg:py-10'>
+         <section className='dark:bg-gray-800 py-5 lg:py-10'>
             <div className='grid grid-cols-1 lg:grid-cols-2 gap-5 container px-3 lg:px-20'>
                <div className='flex flex-col justify-center p-5 lg:p-10'>
                   <h1 className='text-4xl lg:text-6xl mb-3 font-bold text-white'>I want work for NASA</h1>
@@ -40,7 +41,7 @@ const Home = () => {
          </section>
          <section className="lg:py-10 dark:bg-gray-800 dark:text-gray-100">
             <div className="container mx-auto p-4 my-6 space-y-2 text-center">
-               <h2 className="text-5xl font-bold">whatever web development will be taught</h2>
+               <h2 className="text-4xl lg:text-5xl font-bold">whatever web development will be taught</h2>
                <p className="dark:text-gray-300 text-lg">Team Member with Doc Technical</p>
             </div>
             <div className="container mx-auto grid justify-center gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -86,6 +87,29 @@ const Home = () => {
                      <p>Nodejs with MongoDB</p>
                   </div>
                </div>
+            </div>
+         </section>
+
+         <section className="light:bg-gray-800 dark:text-gray-800 lg:px-20">
+            <div className="container mx-auto flex flex-col items-center px-5 py-10 text-center  xl:max-w-3xl">
+               <h1 className="text-4xl font-bold leading-none sm:text-5xl">Find best
+                  <span className="dark:text-violet-400"> Talented</span> Candidate
+               </h1>
+               <div className="flex flex-wrap justify-center">
+                  <button className="px-8 py-3 m-2 text-lg font-semibold rounded dark:bg-violet-400 dark:text-gray-900">Get started</button>
+               </div>
+            </div>
+            <div class="container mx-auto px-5 lg:px-10 p-10 grid grid-cols-4 grid-rows-2 grid-flow-col gap-4">
+               <div class="row-span-3 col-span-2 bg-gray-800 rounded-xl flex items-center">
+                  <img className='p-5' src={photo2} alt="" />
+                  <div className='pr-3'>
+                     <h3 className='text-white text-3xl font-semibold'>Candidate Guides</h3>
+                     <p className='text-white'>We shortlist and pre-assess resumes and candidates based on your unique needs.</p>
+                  </div>
+
+               </div>
+               <div class="col-span-2">02</div>
+               <div class="col-span-2">03</div>
             </div>
          </section>
       </div>
