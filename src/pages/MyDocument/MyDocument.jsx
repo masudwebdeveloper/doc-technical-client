@@ -3,17 +3,14 @@ import { createRef } from 'react';
 import Pdf from 'react-to-pdf';
 const ref = createRef();
 const options = {
-   orientation: 'landscape',
-   unit: 'in',
-   format: [4,2]
+   orientation: 'landscape'
 };
 
 const MyDocument = () => {
-   
+
    return (
-      <div className='App'>
-         
-         <div style={{width: "100%", heigth: "100%"}} ref={ref} className="lg:px-20">
+      <div className='sm:text-center'>
+         <div style={{ width: "100%", heigth: "100%" }} ref={ref} className="lg:px-20">
             <div className='text-center'>
                <h1 className='text-6xl font-bold'>Masud Rana</h1>
                <address className='text-xl font-semibold'>Natore, Rajshahi, Dhaka, Bangladesh.</address>
@@ -77,7 +74,7 @@ const MyDocument = () => {
                </div>
             </div>
          </div>
-         <Pdf targetRef={ref} filename="code-example.pdf" x={1} y={1}>
+         <Pdf targetRef={ref} filename="code-example.pdf" options={options}>
             {
                ({ toPdf }) => <button className='p-5 bg-indigo-900 text-white text-xl font-semibold rounded-md ml-60 mb-5' onClick={toPdf}>Download pdf</button>
             }
