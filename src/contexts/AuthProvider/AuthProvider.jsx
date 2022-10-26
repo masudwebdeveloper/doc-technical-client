@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { createContext } from 'react';
-import { createUserWithEmailAndPassword, FacebookAuthProvider, getAuth, GoogleAuthProvider, onAuthStateChanged, sendEmailVerification, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
+import { createUserWithEmailAndPassword, FacebookAuthProvider, getAuth, GithubAuthProvider, GoogleAuthProvider, onAuthStateChanged, sendEmailVerification, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
 import app from '../../firebase/firebase.config';
 import { useEffect } from 'react';
 
@@ -9,6 +9,7 @@ export const AuthContext = createContext();
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
 const facebookProvider = new FacebookAuthProvider();
+const githubProvider = new GithubAuthProvider();
 
 const AuthProvider = ({ children }) => {
    const [user, setUser] = useState(null);
@@ -36,6 +37,11 @@ const AuthProvider = ({ children }) => {
    const signInWithFacebook = () => {
       setLoading(true)
       return signInWithPopup(auth, facebookProvider);
+   }
+
+   const signInWithGithub = () => {
+      setLoading(true);
+      return signInWithPopup(auth, githubProvider);
    }
 
    useEffect(() => {
@@ -73,6 +79,7 @@ const AuthProvider = ({ children }) => {
       verifyEmail,
       forgotPassword,
       signInWithGoogle,
+      signInWithGithub,
       userUpdateProfile,
       signInWithFacebook
    }
