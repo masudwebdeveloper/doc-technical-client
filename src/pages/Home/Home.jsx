@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaPlay } from 'react-icons/fa';
+import { FaBootstrap, FaCss3, FaHtml5, FaNodeJs, FaPlay, FaReact } from 'react-icons/fa';
 import heroPhoto from '../../assets/brands/hero-photo.jpg'
 import photo1 from '../../assets/brands/masud-pic.jpg'
 
@@ -35,6 +35,56 @@ const Home = () => {
                   <div className='border-2 mt-5'></div>
                   <p className="mt-4 mb-8 text-lg"><span>Hey,</span> <br />Thanks for stopping by. I am Masud, an web developer, font-end developer, my dream wanna to be full stack developer & entrepreneur . On an average day, I learn 10 hours of web programming!!</p>
                   <h4 className='text-sky-800 text-lg underline'>This is my story</h4>
+               </div>
+            </div>
+         </section>
+         <section className="lg:py-10 dark:bg-gray-800 dark:text-gray-100">
+            <div className="container mx-auto p-4 my-6 space-y-2 text-center">
+               <h2 className="text-5xl font-bold">whatever web development will be taught</h2>
+               <p className="dark:text-gray-300 text-lg">Team Member with Doc Technical</p>
+            </div>
+            <div className="container mx-auto grid justify-center gap-4 sm:grid-cols-2 lg:grid-cols-3">
+               <div className="flex flex-col items-center p-4">
+                  <FaHtml5 className='text-6xl'></FaHtml5>
+                  <h3 className="my-3 text-3xl font-semibold">HTML5</h3>
+                  <div className="space-y-1 leading-tight">
+                     <p>html4 & html5 all tags</p>
+                  </div>
+               </div>
+               <div className="flex flex-col items-center p-4">
+                  <FaCss3 className='text-6xl'></FaCss3>
+                  <h3 className="my-3 text-3xl font-semibold">CSS3</h3>
+                  <div className="space-y-1 leading-tight">
+                     <p>css all styles</p>
+                  </div>
+               </div>
+               <div className="flex flex-col items-center p-4">
+                  <h1 className='uppercase text-6xl'>js</h1>
+                  <h3 className="my-3 text-3xl font-semibold">JavaScript</h3>
+                  <div className="space-y-1 leading-tight">
+                     <p>JavaScript All functionality</p>
+                  </div>
+               </div>
+               <div className="flex flex-col items-center p-4">
+                  <FaBootstrap className='text-6xl'></FaBootstrap>
+                  <h3 className="my-3 text-3xl font-semibold">Bootstrap</h3>
+                  <div className="space-y-1 leading-tight">
+                     <p>Bootstrap with react Bootsrap</p>
+                  </div>
+               </div>
+               <div className="flex flex-col items-center p-4">
+                  <FaReact className='text-6xl'></FaReact>
+                  <h3 className="my-3 text-3xl font-semibold">React</h3>
+                  <div className="space-y-1 leading-tight">
+                     <p>React with React Router Dom</p>
+                  </div>
+               </div>
+               <div className="flex flex-col items-center p-4">
+                  <FaNodeJs className='text-6xl'></FaNodeJs>
+                  <h3 className="my-3 text-3xl font-semibold">Node Js</h3>
+                  <div className="space-y-1 leading-tight">
+                     <p>Nodejs with MongoDB</p>
+                  </div>
                </div>
             </div>
          </section>
