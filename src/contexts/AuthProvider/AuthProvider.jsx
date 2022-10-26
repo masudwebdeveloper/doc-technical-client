@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { createContext } from 'react';
-import { createUserWithEmailAndPassword, FacebookAuthProvider, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
+import { createUserWithEmailAndPassword, FacebookAuthProvider, getAuth, GoogleAuthProvider, onAuthStateChanged, sendEmailVerification, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
 import app from '../../firebase/firebase.config';
 import { useEffect } from 'react';
 
@@ -40,7 +40,7 @@ const AuthProvider = ({ children }) => {
 
    useEffect(() => {
       const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
-         if (user === null) {
+         if (currentUser === null || currentUser.emailVerified) {
             setUser(currentUser)
          }
          setLoading(false)
@@ -54,17 +54,27 @@ const AuthProvider = ({ children }) => {
       setLoading(true)
       return signOut(auth)
    }
+
+   const verifyEmail = () => {
+      return sendEmailVerification(auth.currentUser);
+   }
+
+   const forgotPassword = (email) => {
+      return sendPasswordResetEmail(auth, email);
+   }
    const authInfo = {
       user,
-      signIn,
       logOut,
+      signIn,
       setUser,
       loading,
-      setLoading,
       createUser,
+      setLoading,
+      verifyEmail,
+      forgotPassword,
       signInWithGoogle,
-      signInWithFacebook,
-      userUpdateProfile
+      userUpdateProfile,
+      signInWithFacebook
    }
    return (
       <AuthContext.Provider value={authInfo}>

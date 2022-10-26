@@ -3,6 +3,8 @@ import { router } from './routes/Routes/Routes';
 import AOS from 'aos';
 import "aos/dist/aos.css";
 import { useEffect } from 'react';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   useEffect(() => {
@@ -11,6 +13,7 @@ function App() {
   return (
     <div>
       <RouterProvider router={router}></RouterProvider>
+      <ToastContainer></ToastContainer>
     </div>
   );
 }

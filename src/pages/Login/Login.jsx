@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import { useContext } from 'react';
 import { FaFacebook } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 
 const Login = () => {
-   const { signIn, setUser, setLoading, signInWithGoogle, signInWithFacebook } = useContext(AuthContext);
+   const { signIn,forgotPassword, setUser, setLoading, signInWithGoogle, signInWithFacebook } = useContext(AuthContext);
    const [error, setError] = useState('');
+   const [userEmail, setUserEmail] = useState('');
    const navigate = useNavigate();
    const location = useLocation()
 
@@ -21,12 +23,16 @@ const Login = () => {
          .then(result => {
             const user = result.user;
             form.reset();
+            toast.success('Login successful', {autoClose: 2000})
             setError('')
             if (user) {
                navigate(from, { replace: true })
             }
          })
-         .catch(error => setError(error.message))
+         .catch(error => {
+            setError(error.message)
+            toast.error(error.message, {autoClose: 2000})
+         })
          .finally(() => {
             setLoading(false)
          })
@@ -41,9 +47,13 @@ const Login = () => {
             if (user) {
                navigate(from, { replace: true })
             }
+            toast.success('Login successful', {autoClose: 2000})
             console.log(user);
          })
-      .catch(error => setError(error.message))
+         .catch(error => {
+            setError(error.message)
+            toast.error(error.message, {autoClose: 2000})
+         })
    }
 
    const handleFacebookSignIn = () => {
@@ -55,29 +65,50 @@ const Login = () => {
             if (user) {
                navigate(from, { replace: true })
             }
+            toast.success('Login successful', {autoClose: 2000})
             console.log(user);
          })
          .catch(error => {
-         setError(error.message)
+            setError(error.message)
+            toast.error(error.message, {autoClose: 2000})
+         })
+   }
+
+   const handleEmailBlur = (event) => {
+      event.preventDefault()
+      const form = event.target;
+      const email = form.value;
+      setUserEmail(email);
+      console.log(email);
+
+   }
+   const handleForgotPassword = () => {
+      forgotPassword(userEmail)
+         .then(() => {
+         toast.warn('Please check your email dont forgot check spam folder!', {autoClose: 2000})
+         })
+         .catch(error => {
+            setError(error.message)
+         toast.error(error.message, {autoClose: 2000})
       })
    }
    return (
       <div className="max-w-md mx-auto my-10 p-8 space-y-3 rounded-xl dark:bg-slate-900 dark:text-gray-100">
-         <p className='text-red-700'>{ error}</p>
-         <h1 className="text-2xl font-bold text-center">Please Login</h1>
+         <p className='text-red-700'>{error}</p>
+         <h1 className="text-4xl font-bold text-center">Please Login</h1>
          <form onSubmit={onSubmit} novalidate="" action="" className="space-y-6 ng-untouched ng-pristine ng-valid">
             <div className="space-y-1 text-sm">
-               <label htmlFor="email" className="block text-light-400 mb-3">Useremail</label>
-               <input type="email" name="email" id='email' placeholder="User email" className="w-full px-4 py-3 rounded-md border-light-700 bg-light-900 dark:text-gray-900 focus:border-violet-400" required />
+               <label htmlFor="email" className="block text-light-400 mb-3 text-xl">Useremail</label>
+               <input onBlur={handleEmailBlur} type="email" name="email" id='email' placeholder="User email" className="w-full px-4 py-3 rounded-md border-light-700 bg-light-900 dark:text-gray-900 focus:border-violet-400" required />
             </div>
             <div className="space-y-1 text-sm">
-               <label htmlFor="password" className="block text-light-400 mb-3">Password</label>
+               <label htmlFor="password" className="block text-light-400 mb-3 text-xl">Password</label>
                <input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md border-light-700 bg-light-900 dark:text-gray-900 focus:border-violet-400" required />
                <div className="flex justify-end text-xs text-light-400">
-                  <Link className='mt-3' rel="noopener noreferrer" to="#">Forgot Password?</Link>
+                  <button onClick={handleForgotPassword} className='mt-3 text-xl' rel="noopener noreferrer">Forgot Password?</button>
                </div>
             </div>
-            <button className="block w-full px-3 py-2 text-center rounded-sm text-light-900 font-bold text-2xl dark:bg-violet-400">Sign in</button>
+            <button className="block w-full px-3 py-2 text-center rounded-sm text-light-900 font-bold text-2xl dark:bg-violet-400">Log in</button>
          </form>
          <div className="flex items-center pt-4 space-x-1">
             <div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
@@ -100,7 +131,7 @@ const Login = () => {
             </button>
          </div>
          <p className="text-xs text-center sm:px-6 text-light-400">Don't have an account?
-            <Link rel="noopener noreferrer" to="/register" className="underline dark:text-gray-100">Sign up</Link>
+            <Link rel="noopener noreferrer" to="/register" className="underline dark:text-gray-100 text-lg">Sign up</Link>
          </p>
       </div>
    );
