@@ -14,8 +14,9 @@ const Courses = () => {
    }, [])
    return (
       <section>
-         <div className='grid grid-col-1 lg:grid-cols-3 container px-5 lg:px-20 '>
+         <div className='grid grid-col-1 lg:grid-cols-3 px-5 lg:px-20 '>
             <aside className='col-span-1'>
+               <h3 className='text-xl font-semibold mt-3 text-slate-400'>Do you want to details course Click Below Course?</h3>
                <ul className="menu bg-base-100 w-56 rounded my-5">
                   {
                      categories.map((category, index) => <li key={index} className='hover-bordered mb-1'>

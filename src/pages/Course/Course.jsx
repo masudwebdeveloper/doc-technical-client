@@ -10,7 +10,7 @@ const Course = ({ course }) => {
             <h2 className="card-title">{ title}</h2>
             <p>{ details.length > 100 ? details.slice(0,150) + "..." : details}</p>
             <div className="card-actions justify-end">
-               <Link to={`/courses/${_id}`} className="btn btn-primary">Details</Link>
+               <Link to={`/courses/${_id}`} className="btn btn-primary">Check Out</Link>
             </div>
          </div>
       </div>
