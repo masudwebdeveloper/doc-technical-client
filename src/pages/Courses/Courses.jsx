@@ -8,7 +8,7 @@ const Courses = () => {
    const [categories, setCategories] = useState([]);
    const courses = useLoaderData();
    useEffect(() => {
-      fetch('http://localhost:5000/categories-courses')
+      fetch('https://doc-technical-server.vercel.app/categories-courses')
          .then(res => res.json())
          .then(data => setCategories(data))
    }, [])

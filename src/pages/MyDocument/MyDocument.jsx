@@ -9,7 +9,7 @@ const options = {
 const MyDocument = () => {
 
    return (
-      <div className='sm:text-center'>
+      <div className='text-center lg:text-left'>
          <div style={{ width: "100%", heigth: "100%" }} ref={ref} className="lg:px-20">
             <div className='text-center'>
                <h1 className='text-6xl font-bold'>Masud Rana</h1>
