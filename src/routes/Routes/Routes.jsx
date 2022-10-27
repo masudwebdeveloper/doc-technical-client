@@ -7,6 +7,7 @@ import Login from "../../pages/Login/Login";
 import MyDocument from "../../pages/MyDocument/MyDocument";
 import Register from "../../pages/Register/Register";
 import CoursesDetails from "../../share/CoursesDetails/CoursesDetails";
+import FrequentlyAQ from "../../share/FrequentlyAQ/FrequentlyAQ";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 const { createBrowserRouter } = require("react-router-dom");
@@ -34,6 +35,10 @@ export const router = createBrowserRouter([
          {
             path: '/blogs',
             element: <Blogs></Blogs>
+         },
+         {
+            path: '/frequentlyaq',
+            element: <FrequentlyAQ></FrequentlyAQ>
          },
          {
             path: '/mydocument',

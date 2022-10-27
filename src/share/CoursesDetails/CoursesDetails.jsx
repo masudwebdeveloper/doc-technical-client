@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
-import MyDocument from '../../pages/MyDocument/MyDocument';
 
 const CoursesDetails = () => {
    const singleCourse = useLoaderData();

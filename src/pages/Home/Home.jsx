@@ -9,6 +9,7 @@ import WebCourse from '../../share/WebCourse/WebCourse';
 import WebProjectGallary from '../../share/WebProjectGallary/WebProjectGallary';
 import CourseBenifit from '../../share/CourseBenifit/CourseBenifit';
 import SupportGroup from '../../share/SupportGroup/SupportGroup';
+import FrequentlyAQ from '../../share/FrequentlyAQ/FrequentlyAQ';
 
 const Home = () => {
 
@@ -19,7 +20,7 @@ const Home = () => {
                <div className='flex flex-col justify-center p-5 lg:p-10' data-aos="fade-right" data-aos-duration="2000">
                   <h1 className='text-4xl lg:text-6xl mb-3 font-bold text-white'>I want work for NASA</h1>
                   <p className='text-lg lg:text-xl font-semibold text-white'>Online learning has become an integral component of higher education, as is evident by the steady emergence and growth of online course offerings and online academic and professional degree programs</p>
-                  <button className="btn btn-secondary w-28 mt-5">Explore</button>
+                  <button className="btn btn-secondary w-40 mt-5 hover:scale-105 hover:translate-x-4 duration-700">Explore <FaArrowRight className='ml-2 inline'></FaArrowRight></button>
                </div>
                <div className='p-5' data-aos="fade-left" data-aos-duration="2000">
                   <img className=' rounded-xl' src={heroPhoto} alt="" />
@@ -101,7 +102,7 @@ const Home = () => {
                <h1 className="text-4xl font-bold leading-none sm:text-5xl">Find best
                   <span className="dark:text-violet-400"> Talented</span> Candidate
                </h1>
-               <div className="flex flex-wrap flex-row justify-center hover:translate-x-3 mt-5 transition duration-500">
+               <div className="flex flex-wrap flex-row justify-center hover:scale-105 hover:translate-x-3 mt-5 transition duration-700">
                   <button className="px-8 py-3 m-2 text-lg font-semibold rounded dark:bg-violet-400 dark:text-gray-900"> Successful Student <FaArrowRight className='inline ml-2'></FaArrowRight> </button>
                </div>
             </div>
@@ -143,6 +144,10 @@ const Home = () => {
          {/* support group section */}
          <div>
             <SupportGroup></SupportGroup>
+         </div>
+         {/* frequently answer Questions */}
+         <div>
+            <FrequentlyAQ></FrequentlyAQ>
          </div>
       </div>
    );
