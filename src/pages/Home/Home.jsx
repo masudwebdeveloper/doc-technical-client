@@ -5,6 +5,7 @@ import photo1 from '../../assets/brands/masud-pic.jpg';
 import photo2 from '../../assets/brands/guides.png';
 import photo3 from '../../assets/brands/productive.png';
 import photo4 from '../../assets/brands/developer.png';
+import WebCourse from '../../share/WebCourse/WebCourse';
 
 const Home = () => {
 
@@ -125,6 +126,9 @@ const Home = () => {
                </div>
             </div>
          </section>
+         <div>
+            <WebCourse></WebCourse>
+         </div>
       </div>
    );
 };

@@ -33,7 +33,7 @@ npm run build after deploy in firebase
 ### firebase deploy done
 
 github code link 
-client site code link [doc-technical-client](https://github.com/programming-hero-web-course1/b610-learning-platform-client-side-masudwebdeveloper)
+client site code link [doc-technical-client](https://github.com/programming-hero-web-course1/b610-learning-platform-client-side-masudwebdeveloper)/
 server site code link [doc-technical-server](https://github.com/programming-hero-web-course1/b610-lerning-platform-server-side-masudwebdeveloper)
 
 ** This side is ready for production
