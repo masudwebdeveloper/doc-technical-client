@@ -5,7 +5,7 @@ import oldman from '../../assets/brands/oldman.svg'
 
 const CourseBenifit = () => {
    return (
-      <section className="p-6 dark:bg-gray-800 dark:text-gray-100">
+      <section className="p-6 dark:bg-gray-800 dark:text-gray-100 py-10">
          <div className="container mx-auto">
             <div className='flex flex-col items-center'>
                <img className='w-32' src={oldman} alt="" />

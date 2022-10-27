@@ -15,7 +15,7 @@ const WebProjectGallary = () => {
             <p className='my-5 font-mono text-lg'>We will do ten projects together</p>
 
          </div>
-         <div className="container grid grid-cols-2 gap-4 p-10 mx-auto md:grid-cols-4 dark:bg-gray-800 rounded-xl">
+         <div className="container grid grid-cols-2 gap-4 p-5 lg:p-10 mx-auto md:grid-cols-4 dark:bg-gray-800 rounded-xl">
             <img src={todo} alt="" className="w-full h-full col-span-2 row-span-2 rounded shadow-sm max-h-96 md:col-start-3 md:row-start-1 dark:bg-gray-500 aspect-square hover:scale-105 duration-500" data-aos="zoom-in-left" data-aos-duration="2000"/>
             <img alt="" className="w-full h-full rounded shadow-sm max-h-48 dark:bg-gray-500 aspect-square hover:scale-105 duration-500" src={todo} data-aos="fade-down-right" data-aos-duration="2000"/>
             <img alt="" className="w-full h-full rounded shadow-sm max-h-48 dark:bg-gray-500 aspect-square hover:scale-105 duration-500" src={video} data-aos="fade-down-right" data-aos-duration="2000"/>
