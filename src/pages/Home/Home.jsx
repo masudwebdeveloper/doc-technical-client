@@ -6,6 +6,7 @@ import photo2 from '../../assets/brands/guides.png';
 import photo3 from '../../assets/brands/productive.png';
 import photo4 from '../../assets/brands/developer.png';
 import WebCourse from '../../share/WebCourse/WebCourse';
+import WebProjectGallary from '../../share/WebProjectGallary/WebProjectGallary';
 
 const Home = () => {
 
@@ -128,6 +129,10 @@ const Home = () => {
          </section>
          <div>
             <WebCourse></WebCourse>
+         </div>
+         {/* web gallary */}
+         <div>
+            <WebProjectGallary></WebProjectGallary>
          </div>
       </div>
    );
