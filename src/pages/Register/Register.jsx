@@ -76,6 +76,9 @@ const Register = () => {
       createUser(email, password)
          .then(result => {
             const user = result.user;
+            if (user) {
+               navigate('/')
+            }
             form.reset();
             setError('');
             handleUpdateUserProfile(name, photoURL);

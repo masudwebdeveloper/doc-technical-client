@@ -13,14 +13,14 @@ const WebCourse = () => {
 
             <div className="flex flex-col w-full divide-y sm:flex-row sm:divide-y-0 sm:divide-x sm:px-8 lg:px-12 xl:px-32 divide-gray-700">
                <div className="flex flex-col w-full divide-y divide-gray-700">
-                  <a rel="noopener noreferrer" href="#" className=" p-4 sm:py-8 lg:py-12" data-aos="fade-down-right" data-aos-duration="2000">
+                  <a rel="noopener noreferrer" href="##" className=" p-4 sm:py-8 lg:py-12" data-aos="fade-down-right" data-aos-duration="2000">
                      <div className='hover:scale-105 duration-500 flex flex-col items-center justify-center'>
                         <FaVideo className='w-10 h-10 text-center'></FaVideo>
                         <h1 className="my-4 text-xl font-medium leading-none text-center sm:text-xl">135+ videos in 12 modules</h1>
                         <p className='text-center font-serif'>The entire course is divided into 12 modules and 135+ videos so that you can learn step by step.</p>
                      </div>
                   </a>
-                  <a rel="noopener noreferrer" href="#" className=" p-4 sm:py-8 lg:py-12" data-aos="fade-up-right" data-aos-duration="2000">
+                  <a rel="noopener noreferrer" href="##" className=" p-4 sm:py-8 lg:py-12" data-aos="fade-up-right" data-aos-duration="2000">
                      <div className='hover:scale-105 duration-500 flex flex-col items-center justify-center'>
                         <FaCode className='w-10 h-10 text-center'></FaCode>
                         <h1 className="my-4 text-xl font-medium leading-none text-center sm:text-xl">10 assignments</h1>
@@ -30,14 +30,14 @@ const WebCourse = () => {
 
                </div>
                <div className="flex flex-col w-full divide-y divide-gray-700">
-                  <a rel="noopener noreferrer" href="#" className=" p-4 sm:py-8 lg:py-12" data-aos="fade-down" data-aos-duration="2000">
+                  <a rel="noopener noreferrer" href="##" className=" p-4 sm:py-8 lg:py-12" data-aos="fade-down" data-aos-duration="2000">
                      <div className='hover:scale-105 duration-500 flex flex-col items-center justify-center'>
                         <FaDesktop className='w-10 h-10 text-center'></FaDesktop>
                         <h1 className="my-4 text-xl font-medium leading-none text-center sm:text-xl">30 hours of 15GB of recorded</h1>
                         <p className='text-center font-serif text-gray-100'>Video size and duration are optimized taking into account time and bandwidth consumption.</p>
                      </div>
                   </a>
-                  <a rel="noopener noreferrer" href="#" className=" p-4 sm:py-8 lg:py-12" data-aos="fade-up" data-aos-duration="2000">
+                  <a rel="noopener noreferrer" href="##" className=" p-4 sm:py-8 lg:py-12" data-aos="fade-up" data-aos-duration="2000">
                      <div className='hover:scale-105 duration-500 flex flex-col items-center justify-center'>
                         <FaUserFriends className='w-10 h-10 text-center'></FaUserFriends>
                         <h1 className="my-4 text-xl font-medium leading-none text-center sm:text-xl">5 live sessions</h1>
@@ -47,14 +47,14 @@ const WebCourse = () => {
 
                </div>
                <div className="flex flex-col w-full divide-y divide-gray-700">
-                  <a rel="noopener noreferrer" href="#" className=" p-4 sm:py-8 lg:py-12" data-aos="fade-down-left" data-aos-duration="2000"> 
+                  <a rel="noopener noreferrer" href="##" className=" p-4 sm:py-8 lg:py-12" data-aos="fade-down-left" data-aos-duration="2000"> 
                      <div className='hover:scale-105 duration-500 flex flex-col items-center justify-center'>
                         <MdQuiz className='w-10 h-10 text-center'></MdQuiz>
                         <h1 className="my-4 text-xl font-medium leading-none text-center sm:text-xl">120+ quizzes</h1>
-                        <p className='text-center font-serif'>There will be quizzes with explanations and answers at the end of each video so that you can check your progress</p>
+                        <p className='text-center font-serif'>There will be quizzes with explanations and answers at the end of each video so that you can check your</p>
                      </div>
                   </a>
-                  <a rel="noopener noreferrer" href="#" className=" p-4 sm:py-8 lg:py-12" data-aos="fade-up-left" data-aos-duration="2000">
+                  <a rel="noopener noreferrer" href="##" className=" p-4 sm:py-8 lg:py-12" data-aos="fade-up-left" data-aos-duration="2000">
                      <div className='hover:scale-105 duration-500 flex flex-col items-center justify-center'>
                         <MdLayers className='w-10 h-10 text-center'></MdLayers>
                         <h1 className="my-4 text-xl font-medium leading-none text-center sm:text-xl">10 projects</h1>
